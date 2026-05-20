@@ -37,7 +37,7 @@
 ### Быстрый старт
 
 # 1. Клонировать репозиторий
-git clone https://github.com/n13359520-jpg/php-test-project.git
+git clone https://github.com/nats15/php-test-project.git
 cd php-test-project
 
 # 2. Запустить проект
@@ -107,7 +107,7 @@ sudo docker compose down
 
 ### Готовый Docker-образ
 
-n13359520-jpg/php-test-project:latest
+nats15/php-test-project:latest
 
 ---
 
