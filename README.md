@@ -44,7 +44,7 @@ cd php-test-project
 sudo docker compose up -d --build
 
 # 3. Проверить работу
-curl http://localhost:8080
+curl http://51.250.33.69
 
 ### Ожидаемый ответ
 
