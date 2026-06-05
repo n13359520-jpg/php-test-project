@@ -9,6 +9,8 @@ services:
     restart: unless-stopped
     networks:
       - app-network
+    depends_on:
+      - db
 
   nginx:
     image: nginx:alpine
@@ -23,6 +25,26 @@ services:
     restart: unless-stopped
     networks:
       - app-network
+
+  db:
+    image: mysql:8.0
+    container_name: mysql_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: todo
+      MYSQL_USER: todo_user
+      MYSQL_PASSWORD: todo_pass
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - app-network
+
+volumes:
+  db_data:
 
 networks:
   app-network:
